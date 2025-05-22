@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="Top" fx:id="idPantalla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="710.0" style="-fx-background-color: #efeee3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Trackfit.Controladores.ControladorUbicacion">
+    <children>
+        <ImageView fitHeight="363.0" fitWidth="372.0" layoutX="367.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Imagenes/Ubicacion.jpeg" />
+            </image>
+        </ImageView>
+        <Rectangle fill="#fdfbec" height="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="710.0">
+         <effect>
+            <DropShadow />
+         </effect></Rectangle>
+        <Rectangle arcHeight="10.0" arcWidth="10.0" cache="true" depthTest="ENABLE" fill="#fdfbec" height="316.0" layoutX="17.0" layoutY="79.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="334.0" />
+        <Text fill="#223c61" layoutX="72.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregar Ubicaciones">
+            <font>
+                <Font name="Poppins Bold" size="22.0" />
+            </font>
+        </Text>
+        <Label layoutX="62.0" layoutY="137.0" text="Nombre" textFill="#36393d">
+            <font>
+                <Font name="Poppins Bold" size="11.0" />
+            </font>
+        </Label>
+        <TextField fx:id="idNombre" blendMode="SRC_ATOP" layoutX="62.0" layoutY="153.0" onMouseClicked="#onMouseClickedNombre" prefHeight="25.0" prefWidth="257.0" promptText="Ingrese el nombre de la ubicación" style="-fx-background-color: fdfbec;">
+            <font>
+                <Font name="Roboto Italic" size="8.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </TextField>
+        <TextField fx:id="idLatitud" blendMode="SRC_ATOP" layoutX="62.0" layoutY="212.0" onMouseClicked="#onMouseClickedLatitud" prefHeight="25.0" prefWidth="257.0" promptText="Ingrese la latitud de la ubicación" style="-fx-background-color: fdfbec;">
+            <font>
+                <Font name="Roboto Italic" size="8.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </TextField>
+        <TextField fx:id="idLongitud" blendMode="SRC_ATOP" layoutX="62.0" layoutY="272.0" onMouseClicked="#onMouseClickedLongitud" prefHeight="25.0" prefWidth="257.0" promptText="Ingrese la longitud de la ubicación" style="-fx-background-color: fdfbec;">
+            <font>
+                <Font name="Roboto Italic" size="8.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </TextField>
+        <Label layoutX="62.0" layoutY="196.0" text="Latitud" textFill="#36393d">
+            <font>
+                <Font name="Poppins Bold" size="11.0" />
+            </font>
+        </Label>
+        <Button fx:id="idAgregar" layoutX="62.0" layoutY="324.0" mnemonicParsing="false" onAction="#onActionAgregar" prefHeight="39.0" prefWidth="137.0" style="-fx-background-color: #223c61;" text="Agregar Ubicación" textFill="#fdfbec">
+            <font>
+                <Font name="Poppins Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Separator layoutX="62.0" layoutY="176.0" prefHeight="0.0" prefWidth="257.0">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <effect>
+                <ColorInput height="1.0" paint="BLACK" width="255.0" />
+            </effect>
+        </Separator>
+        <Separator layoutX="62.0" layoutY="234.0" prefHeight="0.0" prefWidth="257.0">
+            <effect>
+                <ColorInput height="1.0" paint="BLACK" width="255.0" />
+            </effect>
+        </Separator>
+        <TextField fx:id="idErrorLatitud" editable="false" focusTraversable="false" mouseTransparent="true" layoutX="62.0" layoutY="236.0" prefHeight="3.0" prefWidth="257.0" style="-fx-text-fill: #ff0000; -fx-background-color: #fdfbec;">
+            <font>
+                <Font name="Open Sans Italic" size="8.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </TextField>
+        <TextField fx:id="idErrorNombre" editable="false" focusTraversable="false" mouseTransparent="true" layoutX="62.0" layoutY="178.0" prefHeight="3.0" prefWidth="257.0" style="-fx-text-fill: #ff0000; -fx-background-color: #fdfbec;">
+            <font>
+                <Font name="Open Sans Italic" size="8.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </TextField>
+        <Label layoutX="62.0" layoutY="254.0" text="Longitud" textFill="#36393d">
+            <font>
+                <Font name="Poppins Bold" size="11.0" />
+            </font>
+        </Label>
+        <Separator layoutX="62.0" layoutY="294.0" prefHeight="0.0" prefWidth="257.0">
+            <effect>
+                <ColorInput height="1.0" paint="BLACK" width="255.0" />
+            </effect>
+        </Separator>
+        <TextField fx:id="idErrorLongitud" editable="false" focusTraversable="false" mouseTransparent="true" layoutX="62.0" layoutY="296.0" prefHeight="3.0" prefWidth="257.0" style="-fx-text-fill: #ff0000; -fx-background-color: #fdfbec;">
+            <font>
+                <Font name="Open Sans Italic" size="8.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </TextField>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#223c61" height="39.0" layoutX="36.0" layoutY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" width="199.0" />
+      <Text fill="#fdfbec" layoutX="106.0" layoutY="37.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="TrackFit" wrappingWidth="109.0">
+         <font>
+            <Font name="Poppins Bold" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="52.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/ciclismo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="idTrackFit" layoutX="36.0" layoutY="11.0" mnemonicParsing="false" onAction="#onActionTrackFit" opacity="0.0" prefHeight="39.0" prefWidth="199.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="idFinalizar" layoutX="209.0" layoutY="325.0" mnemonicParsing="false" onAction="#onActionFinalizar" opacity="0.4" prefHeight="39.0" prefWidth="109.0" style="-fx-background-color: #223c61;" text="Finalizar Ruta" textFill="#fdfbec">
+         <font>
+            <Font name="Poppins Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor>
+      </Button>
+      <Text fill="#223c61" layoutX="472.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opciones">
+         <font>
+            <Font name="Poppins Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fill="#223c61" layoutX="558.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ayuda">
+         <font>
+            <Font name="Poppins Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <ImageView fitHeight="39.0" fitWidth="48.0" layoutX="645.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/usuario.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="27.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/hacia-atras.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="idAtras" layoutX="29.0" layoutY="95.0" mnemonicParsing="false" onAction="#onActionAtras" opacity="0.0" prefHeight="28.0" prefWidth="25.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="idAgregarUbicacion" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" layoutX="62.0" layoutY="363.0" prefHeight="17.0" prefWidth="137.0" style="-fx-background-color: #fdfbec;">
+         <font>
+            <Font name="Open Sans Italic" size="8.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+    </children>
+</AnchorPane>

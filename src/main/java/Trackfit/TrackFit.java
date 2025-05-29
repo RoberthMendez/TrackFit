@@ -2,6 +2,7 @@ package Trackfit;
 
 import Trackfit.ManejoExcepciones.RutaExc;
 import Trackfit.ManejoExcepciones.TrackFitExc;
+import Trackfit.ManejoExcepciones.UbicacionExc;
 import Trackfit.ManejoRecorridos.Recorrido;
 import Trackfit.ManejoRecorridos.RecorridoService;
 import Trackfit.ManejoRutas.ManejoUbicaciones.UbiService;
@@ -77,7 +78,7 @@ public class TrackFit {
         }
     }
 
-    public void agregarUbicacionARuta(Ruta r, String nomUbicacion, String direccion, int orden) throws RutaExc {
+    public void agregarUbicacionARuta(Ruta r, String nomUbicacion, String direccion, int orden) throws RutaExc, UbicacionExc {
 
         Ubicacion ubicacion =  new Ubicacion(nomUbicacion, direccion); 
 

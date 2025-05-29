@@ -34,13 +34,15 @@ public class Ubicacion {
     @Column(name = "Longitud")
     private double longitud;
 
+    @Transient
     private MapPoint coordenada;
     
 
-    public Ubicacion(String nombre, String direccion) {
+    public Ubicacion(String nombre, String direccion) throws UbicacionExc {
 
         this.nombre = nombre;
         this.direccion = direccion;
+        calcularCoordenadas();
 
     }
 

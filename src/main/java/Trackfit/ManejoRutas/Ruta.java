@@ -49,7 +49,7 @@ public class Ruta {
         for (RutaXUbicacion u: lu) {
             if (u != null){
                 ubi = u.getUbicacion();
-                if (ubi.getLatitud() == ubicacion.getLatitud() && ubi.getLongitud() == ubicacion.getLongitud())
+                if (ubi.getDireccion() == ubicacion.getDireccion())
                     return u;
             }
 

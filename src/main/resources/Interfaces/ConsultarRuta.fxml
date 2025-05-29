@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -24,7 +25,7 @@
             <effect>
                 <DropShadow />
             </effect></Rectangle>
-        <Rectangle arcHeight="10.0" arcWidth="10.0" cache="true" depthTest="ENABLE" fill="#fdfbec" height="339.0" layoutX="170.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="358.0" />
+        <Rectangle arcHeight="10.0" arcWidth="10.0" cache="true" depthTest="ENABLE" fill="#fdfbec" height="339.0" layoutX="36.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="626.0" />
         <Text fill="#223c61" layoutX="249.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar Rutas">
             <font>
                 <Font name="Poppins Bold" size="24.0" />
@@ -70,15 +71,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <JFXComboBox fx:id="idRutas" focusColor="#4d4d4d" layoutX="249.0" layoutY="128.0" onAction="#onActionRutas" prefHeight="25.0" prefWidth="199.0" promptText="Selecciona una Ruta" style="-fx-font-size: 8; -fx-font-family: Roboto; -fx-font-style: Italic;" visibleRowCount="5">
+      <JFXComboBox fx:id="idRutas" focusColor="#4d4d4d" layoutX="113.0" layoutY="128.0" onAction="#onActionRutas" prefHeight="25.0" prefWidth="199.0" promptText="Selecciona una Ruta" style="-fx-font-size: 8; -fx-font-family: Roboto; -fx-font-style: Italic;" visibleRowCount="5">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXComboBox>
-      <JFXListView fx:id="idUbicaciones" layoutX="215.0" layoutY="194.0" prefHeight="205.0" prefWidth="280.0" />
-      <Label fx:id="idTitulo" layoutX="271.0" layoutY="168.0" text="Ubicaciones de la Ruta" textFill="#36393d" visible="false">
+      <JFXListView fx:id="idUbicaciones" layoutX="72.0" layoutY="194.0" prefHeight="197.0" prefWidth="280.0" />
+      <Label fx:id="idTitulo" layoutX="136.0" layoutY="168.0" text="Ubicaciones de la Ruta" textFill="#36393d" visible="false">
          <font>
             <Font name="Poppins Bold" size="13.0" />
          </font>
       </Label>
+      <VBox fx:id="idMapa" layoutX="355.0" layoutY="128.0" prefHeight="259.0" prefWidth="280.0" />
     </children>
 </AnchorPane>

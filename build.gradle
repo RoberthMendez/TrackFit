@@ -31,7 +31,6 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  //mainModule = 'Trackfit'
   mainClass = 'Trackfit.TestTrackFit'
 }
 

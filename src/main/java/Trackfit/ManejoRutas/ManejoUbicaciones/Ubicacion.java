@@ -13,17 +13,21 @@ public class Ubicacion {
     @Column(name = "Nombre")
     private String nombre;
 
+    @Column(name = "Direccion")
+    private String direccion;
+
     @Column(name = "Latitud")
-    private double latitud;
+    private int latitud;
 
     @Column(name = "Longitud")
-    private double longitud;
+    private int longitud;
+    
 
-    public Ubicacion(String nombre, double latitud, double longitud) {
+    public Ubicacion(String nombre, String direccion) {
 
         this.nombre = nombre;
-        this.latitud = latitud;
-        this.longitud = longitud;
+        this.direccion = direccion;
+
     }
 
     public Ubicacion() {
@@ -46,20 +50,12 @@ public class Ubicacion {
         this.nombre = nombre;
     }
 
-    public double getLatitud() {
-        return latitud;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setLatitud(double latitud) {
-        this.latitud = latitud;
-    }
-
-    public double getLongitud() {
-        return longitud;
-    }
-
-    public void setLongitud(double longitud) {
-        this.longitud = longitud;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
 }

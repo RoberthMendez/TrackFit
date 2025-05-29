@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -17,6 +18,9 @@ import java.io.IOException;
 
 public class ControladorUbicacion extends ControladorCrearRuta {
 
+    @FXML
+    private VBox idMapa;
+    
     @FXML
     private AnchorPane idPantalla;
 
@@ -27,19 +31,13 @@ public class ControladorUbicacion extends ControladorCrearRuta {
     private Button idAtras;
 
     @FXML
-    private TextField idErrorLatitud;
+    private TextField idDireccion;
 
     @FXML
-    private TextField idErrorLongitud;
+    private TextField idErrorDireccion;
 
     @FXML
     private Button idFinalizar;
-
-    @FXML
-    private TextField idLatitud;
-
-    @FXML
-    private TextField idLongitud;
 
     @FXML
     private TextField idNombre;
@@ -81,40 +79,20 @@ public class ControladorUbicacion extends ControladorCrearRuta {
         }
         idErrorNombre.clear();
 
-        if(idLatitud.getText().isBlank()){
-            idErrorLatitud.setText("La Latitud es obligatoria");
+        if(idDireccion.getText().isBlank()){
+            idDireccion.setText("La Direccion es obligatoria");
             return;
         }
-        idErrorLatitud.clear();
-
-        if(idLongitud.getText().isBlank()){
-            idErrorLongitud.setText("La Longitud es obligatoria");
-            return;
-        }
-        idErrorLongitud.clear();
-
-        if(!idLatitud.getText().matches("\\d+\\.?\\d*")){
-            idErrorLatitud.setText("La Latitud debe ser un numero");
-            return;
-        }
-        idErrorLatitud.clear();
-
-        if(!idLongitud.getText().matches("\\d+\\.?\\d*")){
-            idErrorLongitud.setText("La Longitud debe ser un numero");
-            return;
-        }
-        idErrorLongitud.clear();
+        idErrorDireccion.clear();
 
         //Agregar la ubicación a la ruta
         try {
-            sistema.agregarUbicacionARuta(ruta, idNombre.getText(), Double.parseDouble(idLatitud.getText()), Double.parseDouble(idLongitud.getText()), ubicaciones+1);
+            sistema.agregarUbicacionARuta(ruta, idNombre.getText(), idDireccion.getText(), ubicaciones+1);
         } catch (RutaExc e) {
             idErrorNombre.clear();
-            idErrorLatitud.setText("Ya existe una ubicación con esta latitud");
-            idErrorLongitud.setText("Ya existe una ubicación con esta longitud");
-            idLatitud.clear();
-            idLongitud.clear();
-            idLatitud.requestFocus();
+            idErrorDireccion.setText("Ya existe una ubicación con esa dirección");
+            idDireccion.clear();
+            idDireccion.requestFocus();
             return;
         } catch (Exception e){
             idErrorNombre.setText(e.getMessage());
@@ -123,8 +101,7 @@ public class ControladorUbicacion extends ControladorCrearRuta {
 
         idAgregarUbicacion.setText("Se agregó una nueva ubicación");
         idNombre.clear();
-        idLatitud.clear();
-        idLongitud.clear();
+        idDireccion.clear();
 
         ubicaciones++;
         if(ubicaciones > 1){

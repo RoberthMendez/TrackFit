@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
@@ -22,6 +23,9 @@ import java.io.IOException;
 
 public class ControladorConsultarRutas extends ControladorMenu {
 
+    @FXML
+    private VBox idMapa;
+    
     @FXML
     private AnchorPane idPantalla;
 
@@ -75,7 +79,7 @@ public class ControladorConsultarRutas extends ControladorMenu {
         ObservableList<String> ubicaciones = idUbicaciones.getItems();
 
         for(Ubicacion u: listaUbicaciones)
-            ubicaciones.add(u.getNombre() + " - Latitud: " + u.getLatitud() + "° - Longitud: " + u.getLongitud() + "°");
+            ubicaciones.add(u.getNombre() + " - Dirección: " + u.getDireccion());
 
     }
 

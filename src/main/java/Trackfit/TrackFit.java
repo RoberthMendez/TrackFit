@@ -77,10 +77,15 @@ public class TrackFit {
         }
     }
 
-    public void agregarUbicacionARuta(Ruta r, String nomUbicacion, double latitud, double longitud, int orden) throws RutaExc {
-        Ubicacion ubicacion =  new Ubicacion(nomUbicacion, latitud, longitud);
+    public void agregarUbicacionARuta(Ruta r, String nomUbicacion, String direccion, int orden) throws RutaExc {
+
+        Ubicacion ubicacion =  new Ubicacion(nomUbicacion, direccion); 
+
+        
+
         r.agregarUbicacion(ubicacion, orden);
         guardarUbicacionEnBD(ubicacion);
+
     }
 
     public void crearRecorrido(String nomRecorrido, String nomRuta, LocalDateTime horaInicio, LocalDateTime horaFin, int calorias, int distancia) throws TrackFitExc{

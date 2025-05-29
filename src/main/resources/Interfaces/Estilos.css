@@ -2,6 +2,7 @@
     -fx-text-fill: black;
     -fx-font-family: "Roboto";
     -fx-font-size: 10px;
+    background-color: transparent;
     -fx-background-color: transparent;
     -fx-font-style: italic;
 }
@@ -16,4 +17,22 @@
     -fx-background-color: transparent;
     -fx-text-fill: black;
     -fx-padding: 8;
+}
+
+.scroll-pane {
+    -fx-background-color: #efeee3; /* fondo del contenedor exterior */
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #efeee3; /* fondo del área visible */
+}
+
+.scroll-pane .content {
+    -fx-background-color: #efeee3; /* fondo del contenido interno */
+}
+
+.scroll-pane .scroll-bar:vertical,
+.scroll-pane .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-background-color: transparent;
 }

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.ColorInput?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Top" fx:id="idPantalla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="710.0" style="-fx-background-color: #efeee3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Trackfit.Controladores.ControladorConsultarRecorridos">
+<AnchorPane id="Top" fx:id="idPantalla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="710.0" style="-fx-background-color: #efeee3;" stylesheets="@Estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Trackfit.Controladores.ControladorConsultarRecorridos">
     <children>
         <ImageView accessibleRole="TEXT_FIELD" fitHeight="538.0" fitWidth="716.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -72,104 +68,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <JFXComboBox fx:id="idRecorridos" focusColor="#4d4d4d" layoutX="135.0" layoutY="168.0" onAction="#onActionRecorridos" prefHeight="25.0" prefWidth="199.0" promptText="Seleccione un recorrido" style="-fx-font-size: 8; -fx-font-family: Roboto; -fx-font-style: Italic;" visibleRowCount="5">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></JFXComboBox>
-      <Label layoutX="137.0" layoutY="150.0" text="Recorrido" textFill="#36393d">
-         <font>
-            <Font name="Poppins Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="137.0" layoutY="214.0" text="Fecha Inicio" textFill="#36393d">
-         <font>
-            <Font name="Poppins Bold" size="11.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idHoraInicio" blendMode="SRC_ATOP" editable="false" layoutX="137.0" layoutY="233.0" mouseTransparent="true" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: fdfbec;">
-         <font>
-            <Font name="Roboto Italic" size="8.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </TextField>
-      <Separator layoutX="137.0" layoutY="258.0" prefHeight="3.0" prefWidth="199.0">
-         <effect>
-            <ColorInput height="1.0" paint="BLACK" width="200.0" />
-         </effect>
-      </Separator>
-      <Label layoutX="378.0" layoutY="214.0" text="Fecha Fin" textFill="#36393d">
-         <font>
-            <Font name="Poppins Bold" size="11.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idHoraFin" blendMode="SRC_ATOP" editable="false" layoutX="379.0" layoutY="233.0" mouseTransparent="true" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: fdfbec;">
-         <font>
-            <Font name="Roboto Italic" size="8.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </TextField>
-      <Separator layoutX="379.0" layoutY="258.0" prefHeight="3.0" prefWidth="199.0">
-         <effect>
-            <ColorInput height="1.0" paint="BLACK" width="200.0" />
-         </effect>
-      </Separator>
-      <Label layoutX="135.0" layoutY="278.0" text="Distancia Recorrida (km)" textFill="#36393d">
-         <font>
-            <Font name="Poppins Bold" size="11.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idDistancia" blendMode="SRC_ATOP" editable="false" layoutX="135.0" layoutY="297.0" mouseTransparent="true" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: fdfbec;">
-         <font>
-            <Font name="Roboto Italic" size="8.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </TextField>
-      <Separator layoutX="135.0" layoutY="322.0" prefHeight="3.0" prefWidth="199.0">
-         <effect>
-            <ColorInput height="1.0" paint="BLACK" width="200.0" />
-         </effect>
-      </Separator>
-      <Label layoutX="377.0" layoutY="278.0" text="Calorías Quemadas (kcal)" textFill="#36393d">
-         <font>
-            <Font name="Poppins Bold" size="11.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idCalorias" blendMode="SRC_ATOP" editable="false" layoutX="377.0" layoutY="297.0" mouseTransparent="true" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: fdfbec;">
-         <font>
-            <Font name="Roboto Italic" size="8.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </TextField>
-      <Separator layoutX="377.0" layoutY="322.0" prefHeight="3.0" prefWidth="199.0">
-         <effect>
-            <ColorInput height="1.0" paint="BLACK" width="200.0" />
-         </effect>
-      </Separator>
-      <Label layoutX="376.0" layoutY="150.0" text="Ruta" textFill="#36393d">
-         <font>
-            <Font name="Poppins Bold" size="11.0" />
-         </font>
-      </Label>
-      <TextField fx:id="idRuta" blendMode="SRC_ATOP" editable="false" layoutX="377.0" layoutY="169.0" mouseTransparent="true" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: fdfbec;">
-         <font>
-            <Font name="Roboto Italic" size="8.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </TextField>
-      <Separator layoutX="377.0" layoutY="194.0" prefHeight="3.0" prefWidth="199.0">
-         <effect>
-            <ColorInput height="1.0" paint="BLACK" width="200.0" />
-         </effect>
-      </Separator>
+      <JFXListView fx:id="idRecorridos" layoutX="148.0" layoutY="139.0" prefHeight="197.0" prefWidth="415.0" />
     </children>
 </AnchorPane>

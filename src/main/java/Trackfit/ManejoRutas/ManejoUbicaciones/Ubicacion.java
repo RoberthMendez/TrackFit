@@ -31,7 +31,7 @@ public class Ubicacion {
     }
 
     public Ubicacion() {
-
+        
     }
 
     public long getId() {

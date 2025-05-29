@@ -2,17 +2,189 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Top" fx:id="idPantalla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="710.0" style="-fx-background-color: #efeee3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Trackfit.Controladores.ControladorMenu">
+<AnchorPane id="Top" fx:id="idPantalla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="710.0" style="-fx-background-color: #efeee3;" stylesheets="@Estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Trackfit.Controladores.ControladorMenu">
     <children>
+      <ScrollPane layoutX="14.0" layoutY="193.0" prefHeight="223.0" prefWidth="685.0" style="-fx-background-color: #efeee3;">
+         <content>
+            <HBox prefHeight="187.0" prefWidth="778.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="188.0">
+                     <children>
+                          <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor>
+                          </Rectangle>
+                          <Text layoutX="31.0" layoutY="31.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Ruta" textAlignment="CENTER" wrappingWidth="128.9999999999999">
+                              <font>
+                                  <Font name="Poppins Regular" size="13.0" />
+                              </font>
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor>
+                          </Text>
+                          <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="45.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../Imagenes/ruta.png" />
+                              </image>
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor>
+                          </ImageView>
+                          <Button fx:id="idCrearRuta" layoutX="14.0" mnemonicParsing="false" onAction="#onActionCrearRuta" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor>
+                              <effect>
+                                  <ColorAdjust />
+                              </effect>
+                          </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="188.0">
+                     <children>
+                        <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Rectangle>
+                        <Text layoutX="21.0" layoutY="32.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar Rutas" textAlignment="CENTER" wrappingWidth="145.33333333333326">
+                           <font>
+                              <Font name="Poppins Regular" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
+                          <ImageView fitHeight="109.0" fitWidth="96.0" layoutX="46.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../Imagenes/mapa.png" />
+                              </image>
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor>
+                          </ImageView>
+                        <Button fx:id="idConsultarRutas" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#onActionConsultarRutas" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="188.0">
+                     <children>
+                        <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Rectangle>
+                          <Text layoutX="30.0" layoutY="31.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Recorrido" textAlignment="CENTER" wrappingWidth="128.9999999999999">
+                              <font>
+                                  <Font name="Poppins Regular" size="13.0" />
+                              </font>
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor>
+                          </Text>
+                          <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="40.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor>
+                              <Image url="@../Imagenes/recorrido.png" />
+                          </ImageView>
+                        <Button fx:id="idCrearRecorrido" layoutX="14.0" layoutY="1.0" mnemonicParsing="false" onAction="#onActionCrearRecorrido" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="188.0">
+                     <children>
+                        <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Rectangle>
+                        <Text layoutX="26.0" layoutY="31.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar Recorridos" textAlignment="CENTER" wrappingWidth="137.66668701171864">
+                           <font>
+                              <Font name="Poppins Regular" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
+                        <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="41.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/ConsultarRecorrido.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Button fx:id="idConsultarRecorrido" layoutX="14.0" layoutY="1.0" mnemonicParsing="false" onAction="#onActionConsultarRecorrido" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="188.0">
+                     <children>
+                        <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Rectangle>
+                        <Text layoutX="24.0" layoutY="34.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Ver Reportes" textAlignment="CENTER" wrappingWidth="128.9999999999999">
+                           <font>
+                              <Font name="Poppins Regular" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
+                        <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="36.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/reportar.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Button fx:id="idVerReportes" layoutX="14.0" mnemonicParsing="false" onAction="#onActionVerReportes" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children></HBox>
+         </content>
+      </ScrollPane>
         <Rectangle fill="#fdfbec" height="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="710.0">
             <effect>
                 <DropShadow />
@@ -38,121 +210,6 @@
                 <Font name="Poppins Light" size="17.0" />
             </font>
         </Text>
-        <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="363.0" layoutY="187.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Rectangle>
-        <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="13.0" layoutY="187.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Rectangle>
-        <Text layoutX="30.0" layoutY="218.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Ruta" textAlignment="CENTER" wrappingWidth="128.9999999999999">
-            <font>
-                <Font name="Poppins Regular" size="13.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Text>
-        <Text layoutX="379.0" layoutY="217.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Recorrido" textAlignment="CENTER" wrappingWidth="128.9999999999999">
-            <font>
-                <Font name="Poppins Regular" size="13.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Text>
-      <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="188.0" layoutY="187.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Rectangle>
-      <Text layoutX="195.0" layoutY="217.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar Rutas" textAlignment="CENTER" wrappingWidth="145.33333333333326">
-         <font>
-            <Font name="Poppins Regular" size="13.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Text>
-        <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="389.0" layoutY="242.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <cursor>
-                <Cursor fx:constant="HAND"/>
-            </cursor>
-            <Image url="@../Imagenes/recorrido.png"/>
-        </ImageView>
-        <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="44.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../Imagenes/ruta.png" />
-            </image>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </ImageView>
-        <ImageView fitHeight="109.0" fitWidth="96.0" layoutX="220.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../Imagenes/mapa.png" />
-            </image>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </ImageView>
-      <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#fdfbec" height="200.0" layoutX="538.0" layoutY="187.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="160.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Rectangle>
-      <Text layoutX="554.0" layoutY="217.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar Recorrido" textAlignment="CENTER" wrappingWidth="128.9999999999999">
-         <font>
-            <Font name="Poppins Regular" size="13.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Text>
-      <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="564.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Imagenes/ConsultarRecorrido.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-        <Button fx:id="idCrearRuta" layoutX="13.0" layoutY="187.0" mnemonicParsing="false" onAction="#onActionCrearRuta" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-                <ColorAdjust />
-            </effect>
-        </Button>
-      <Button fx:id="idConsultarRutas" layoutX="188.0" layoutY="187.0" mnemonicParsing="false" onAction="#onActionConsultarRutas" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Button>
-      <Button fx:id="idCrearRecorrido" layoutX="363.0" layoutY="187.0" mnemonicParsing="false" onAction="#onActionCrearRecorrido" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Button>
-      <Button fx:id="idConsultarRecorrido" layoutX="538.0" layoutY="187.0" mnemonicParsing="false" onAction="#onActionConsultarRecorrido" opacity="0.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #fdfbec;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Button>
       <Text fill="#223c61" layoutX="472.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opciones">
          <font>
             <Font name="Poppins Bold" size="14.0" />

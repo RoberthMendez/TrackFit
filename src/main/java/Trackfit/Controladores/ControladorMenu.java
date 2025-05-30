@@ -28,6 +28,9 @@ public class ControladorMenu {
     @FXML
     private Button idCrearRuta;
 
+    @FXML
+    private Button idVerReporte;
+
     protected static TrackFit sistema = new TrackFit();
 
     @FXML
@@ -83,6 +86,21 @@ public class ControladorMenu {
         Stage stage = (Stage) idConsultarRecorrido.getScene().getWindow();
         stage.setScene(secondScene);
         stage.show();
+
+    }
+
+    @FXML
+    void onActionVerReportes(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Interfaces/VerReportes.fxml"));
+        idPantalla = loader.load();
+
+        Scene secondScene = new Scene(idPantalla);
+
+        Stage stage = (Stage) idConsultarRecorrido.getScene().getWindow();
+        stage.setScene(secondScene);
+        stage.show();
+
 
     }
 

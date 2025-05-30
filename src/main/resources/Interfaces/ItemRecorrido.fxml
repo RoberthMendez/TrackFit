@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- AGREGA ESTA LÍNEA -->
+
+<AnchorPane prefHeight="33.0" prefWidth="475.0" style="-fx-background-color: #efeee3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Trackfit.Controladores.ControladorItemRecorrido">
+   <children>
+      <HBox layoutX="10.0" layoutY="8.0" prefHeight="17.0" prefWidth="465.0" style="-fx-alignment: center-left;">
+         <children>
+            <Text fx:id="idRecorrido" fill="#36393d" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="75.0">
+               <font>
+                  <Font name="Poppins Bold" size="9.0" />
+               </font>
+            </Text>
+            <Text fx:id="idRuta" fill="#36393d" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="70.0">
+               <font>
+                  <Font name="Poppins Regular" size="8.0" />
+               </font>
+            </Text>
+            <Text fx:id="idHoraInicio" fill="#36393d" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="75.0">
+               <font>
+                  <Font name="Poppins Regular" size="8.0" />
+               </font>
+            </Text>
+            <Text fx:id="idHoraFin" fill="#36393d" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="75.0">
+               <font>
+                  <Font name="Poppins Regular" size="8.0" />
+               </font>
+            </Text>
+            <Text fx:id="idDistancia" fill="#36393d" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="75.0">
+               <font>
+                  <Font name="Poppins Regular" size="8.0" />
+               </font>
+            </Text>
+            <Text fx:id="idCalorías" fill="#36393d" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="75.0">
+               <font>
+                  <Font name="Poppins Regular" size="8.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

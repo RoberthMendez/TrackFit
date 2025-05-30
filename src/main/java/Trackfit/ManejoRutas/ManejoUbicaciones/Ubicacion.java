@@ -47,7 +47,7 @@ public class Ubicacion {
     }
 
     public Ubicacion() {
-
+        
     }
 
     public void calcularCoordenadas() throws UbicacionExc{

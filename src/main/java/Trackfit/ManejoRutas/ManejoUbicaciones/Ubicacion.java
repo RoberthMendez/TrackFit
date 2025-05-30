@@ -124,7 +124,9 @@ public class Ubicacion {
         this.coordenada = coordenada; 
     }
 
-    public MapPoint getCoordedana(){
+    public MapPoint getCoordenada(){
+        if(coordenada == null) 
+            coordenada = new MapPoint(latitud, longitud);
         return coordenada;
     }
 

@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+
+
 import java.io.IOException;
 
 public class ControladorCrearRuta extends ControladorMenu {
@@ -31,7 +33,9 @@ public class ControladorCrearRuta extends ControladorMenu {
     @FXML
     void initialize() {
         Platform.runLater(() -> idPantalla.requestFocus());
+
     }
+
 
     @FXML
     void onActionContinuar() throws IOException {

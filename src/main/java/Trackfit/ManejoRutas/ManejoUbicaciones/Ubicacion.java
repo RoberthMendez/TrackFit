@@ -60,7 +60,6 @@ public class Ubicacion {
             URL url = new URL(Strurl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
-            
             int responseCode = conn.getResponseCode();
             if(responseCode != 200){
                 throw new UbicacionExc("Error al ingresar al URL de Google: "+ responseCode);

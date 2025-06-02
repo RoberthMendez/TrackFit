@@ -4,6 +4,7 @@ import Trackfit.ManejoExcepciones.RutaExc;
 import Trackfit.ManejoExcepciones.TrackFitExc;
 import Trackfit.ManejoExcepciones.UbicacionExc;
 import Trackfit.ManejoRecorridos.Recorrido;
+import Trackfit.ManejoRecorridos.Reporte;
 import Trackfit.ManejoRecorridos.RecorridoService;
 import Trackfit.ManejoRutas.ManejoUbicaciones.UbiService;
 import Trackfit.ManejoRutas.ManejoUbicaciones.Ubicacion;
@@ -45,6 +46,36 @@ public class TrackFit {
             System.out.println(recorrido.getNombre());
         }
 
+
+    }
+
+    public Reporte crearReporteRecorridos(String rango){
+
+        List<Recorrido> recorridosRealizados = new ArrayList<>();
+        LocalDateTime ahora = LocalDateTime.now(); // Fecha y hora actual
+        LocalDateTime fechaLimite = LocalDateTime.now();
+        int calorias = 0;
+        int distancia = 0;
+
+        if(rango.equalsIgnoreCase("semanal")) {
+            fechaLimite = ahora.minusWeeks(1);
+        } else if (rango.equalsIgnoreCase("mensual")) {
+            fechaLimite = ahora.minusMonths(1);
+        } else if (rango.equalsIgnoreCase("anual")) {
+            fechaLimite = ahora.minusYears(1);
+        }
+
+        for(Recorrido r: recorridos){
+            if(r.getHoraInicio().isAfter(fechaLimite))
+                recorridosRealizados.add(r);
+        }
+
+        for(Recorrido r: recorridosRealizados){
+            calorias += r.getCalorias();
+            distancia += r.getDistancia();
+        }
+
+        return new Reporte(distancia, calorias, recorridosRealizados);
 
     }
 

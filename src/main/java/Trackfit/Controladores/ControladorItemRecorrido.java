@@ -1,8 +1,12 @@
 package Trackfit.Controladores;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 import Trackfit.ManejoRecorridos.Recorrido;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
+
 
 public class ControladorItemRecorrido {
 
@@ -26,14 +30,17 @@ public class ControladorItemRecorrido {
 
     public void setDatos(Recorrido recorrido) {
 
-        idRecorrido.setText(recorrido.getNombre());
-        if (recorrido.getRuta() != null) {
-            idRuta.setText(recorrido.getRuta().getNombre());
-        } else {
-            idRuta.setText("RutaX");
+        // Asegurarse de que el recorrido no sea nulo
+        if (recorrido == null) {
+            throw new IllegalArgumentException("El recorrido no puede ser nulo");
         }
-        idHoraInicio.setText("Hora Inicio: " + recorrido.getHoraInicio());
-        idHoraFin.setText("Hora Fin: " + recorrido.getHoraFin());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'a las' HH:mm", Locale.forLanguageTag("es-ES"));
+        
+        idRecorrido.setText(recorrido.getNombre().toUpperCase());
+        idRuta.setText("Ruta: " + recorrido.getRuta().getNombre());
+        idHoraInicio.setText("Inicio: " + recorrido.getHoraInicio().format(formatter));
+        idHoraFin.setText("Fin: " + recorrido.getHoraFin().format(formatter));
         idDistancia.setText("Distancia: " + recorrido.getDistancia() + " km");
         idCalorías.setText("Calorías: " + recorrido.getCalorias() + " kcal");
 

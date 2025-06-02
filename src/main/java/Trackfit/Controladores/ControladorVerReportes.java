@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXListCell;
 import com.jfoenix.controls.JFXListView;
 
 import Trackfit.ManejoRecorridos.Recorrido;
+import Trackfit.ManejoRecorridos.Reporte;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +15,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.collections.FXCollections;
 
 
-public class ControladorVerReportes {
 
-      @FXML
+public class ControladorVerReportes extends ControladorMenu {
+
+    @FXML
     private TextField idCalorias;
 
     @FXML
@@ -63,7 +66,7 @@ public class ControladorVerReportes {
         
         // Poner "Semanal", "Mensual", "Trimestral", "Semestral", "Anual" en el comboBox
         idIntervalo.setItems(javafx.collections.FXCollections.observableArrayList(
-            "Semanal", "Mensual", "Trimestral", "Semestral", "Anual"
+            "Semanal", "Mensual", "Anual"
         ));
 
     }
@@ -74,26 +77,11 @@ public class ControladorVerReportes {
 
         // Aquí puedes manejar la acción del comboBox si es necesario
         String intervaloSeleccionado = idIntervalo.getValue();
-        
-        if (intervaloSeleccionado == "Semanal") {
-            //Cargar los recorridos de la semana inventados porque no hay una base de datos
-            idRecorridos.getItems().clear();
-            idRecorridos.getItems().addAll(
-                new Recorrido("Recorrido 1", null, null, null, 500, 10),
-                new Recorrido("Recorrido 2", null, null, null, 600, 12),
-                new Recorrido("Recorrido 3", null, null, null, 700, 15)
-            );
-            
-        }
+        Reporte reporte = sistema.crearReporteRecorridos(intervaloSeleccionado);
 
-        if(intervaloSeleccionado == "Mensual") {
-            //Cargar los recorridos del mes inventados porque no hay una base de datos
-            idRecorridos.getItems().clear();
-            idRecorridos.getItems().addAll(
-                new Recorrido("Recorrido 4", null, null, null, 800, 20),
-                new Recorrido("Recorrido 5", null, null, null, 900, 25)
-            );
-        }
+        idCalorias.setText(String.valueOf(reporte.getCaloriasTotales()));
+        idDistancia.setText(String.valueOf(reporte.getDistanciaTotal()));
+        idRecorridos.setItems(FXCollections.observableArrayList(reporte.getLr()));
 
 
     }

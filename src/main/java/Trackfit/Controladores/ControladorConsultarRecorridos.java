@@ -8,7 +8,6 @@ import com.jfoenix.controls.JFXListView;
 
 import Trackfit.ManejoRecorridos.Recorrido;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +19,7 @@ import java.net.URL;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
-public class ControladorConsultarRecorridos implements Initializable {
+public class ControladorConsultarRecorridos extends ControladorMenu implements Initializable {
 
     @FXML
     private JFXListView<Recorrido> idRecorridos;
@@ -33,13 +32,8 @@ public class ControladorConsultarRecorridos implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Supongamos que tienes una lista de recorridos:
-        ObservableList<Recorrido> recorridos = FXCollections.observableArrayList(
-            new Recorrido("Recorrido 1", null, null, null, 500, 10),
-            new Recorrido("Recorrido 2", null, null, null, 600, 12),
-            new Recorrido("Recorrido 3", null, null, null, 700, 15)
-            // ... otros recorridos
-        );
+
+        idRecorridos.setItems(FXCollections.observableArrayList(sistema.getRecorridos()));
 
         // Renderizar con celdas personalizadas
         idRecorridos.setCellFactory(_ -> new JFXListCell<>() {
@@ -64,7 +58,6 @@ public class ControladorConsultarRecorridos implements Initializable {
             }
         });
 
-        idRecorridos.setItems(recorridos);
     }
 
     @FXML

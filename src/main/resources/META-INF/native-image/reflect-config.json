@@ -1,0 +1,8 @@
+[
+  {
+    "name": "org.hibernate.internal.log.ConnectionInfoLogger",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true,
+    "allDeclaredMethods": true
+  }
+]

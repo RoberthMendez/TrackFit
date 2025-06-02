@@ -29,7 +29,7 @@ public class RutaService {
     }
 
     public List<Ruta> obtenerTodasLasRutas() {
-        List<Ruta> rutas =  new ArrayList<>();
+        List<Ruta> rutas = rutaRepository.findAll();
         List<RutaXUbicacion> rutaXUbicaciones = rutaXUbiRepository.findAll();
         boolean agregado = false;
 

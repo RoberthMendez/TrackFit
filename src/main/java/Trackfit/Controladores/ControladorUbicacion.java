@@ -14,6 +14,19 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import com.gluonhq.maps.*;
+import javafx.scene.Node;
+
+import java.util.ArrayList; 
+import java.util.List;
+
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.geometry.Point2D;
+import Trackfit.ManejoRutas.ManejoUbicaciones.Ubicacion;
+
 import java.io.IOException;
 
 public class ControladorUbicacion extends ControladorCrearRuta {
@@ -53,6 +66,48 @@ public class ControladorUbicacion extends ControladorCrearRuta {
     @FXML
     void initialize() {
         Platform.runLater(() -> idPantalla.requestFocus());
+        actualizarMapa();   
+    }
+
+    void actualizarMapa() {
+        MapView mapView = createMapView();
+        idMapa.getChildren().clear();
+        idMapa.getChildren().add(mapView);
+        VBox.setVgrow(mapView, Priority.ALWAYS);
+    }
+
+    private MapView createMapView() {
+        MapView mapView = new MapView();
+        mapView.setPrefSize(500,400);
+        mapView.addLayer(new ControladorUbicacion.CustomMapLayer());
+        mapView.setZoom(11);
+        mapView.flyTo(0,new MapPoint(4.649923,-74.103937), 0.1);
+
+        return mapView;
+    }
+
+    private class CustomMapLayer extends MapLayer{
+        private final List<Node> markers = new ArrayList<>();;
+        
+        public CustomMapLayer(){
+            int i=0;
+            for(Ubicacion U: ruta.getUbicaciones()){
+                markers.add(new Circle(5, Color.RED));
+                getChildren().add(markers.get(i));
+                i++;
+            }
+        }
+        
+        @Override
+        protected void layoutLayer(){
+            int i=0;
+            for(Ubicacion U: ruta.getUbicaciones()){
+                Point2D point = getMapPoint(U.getCoordenada().getLatitude(),U.getCoordenada().getLongitude());
+                markers.get(i).setTranslateX(point.getX());
+                markers.get(i).setTranslateY(point.getY());
+                i++;
+            }
+        }
     }
 
     @FXML
@@ -99,6 +154,7 @@ public class ControladorUbicacion extends ControladorCrearRuta {
             return;
         }
 
+        actualizarMapa();
         idAgregarUbicacion.setText("Se agregó una nueva ubicación");
         idNombre.clear();
         idDireccion.clear();

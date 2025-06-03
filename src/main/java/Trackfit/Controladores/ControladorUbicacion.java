@@ -15,9 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 import com.gluonhq.maps.*;
-import javafx.scene.Node;
 
 import java.util.ArrayList; 
 import java.util.List;
@@ -91,7 +89,7 @@ public class ControladorUbicacion extends ControladorCrearRuta {
         
         public CustomMapLayer(){
             int i=0;
-            for(Ubicacion U: ruta.getUbicaciones()){
+            for(Ubicacion _: ruta.getUbicaciones()){
                 markers.add(new Circle(5, Color.RED));
                 getChildren().add(markers.get(i));
                 i++;

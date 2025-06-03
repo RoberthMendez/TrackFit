@@ -1,93 +1,92 @@
 plugins {
-  id 'java'
-  id 'application'
-  //id 'org.javamodularity.moduleplugin' version '1.8.12'
-  id 'org.openjfx.javafxplugin' version '0.0.13'
-  id 'org.beryx.jlink' version '2.25.0'
-  id 'org.springframework.boot' version '3.4.5'
-  id 'io.spring.dependency-management' version '1.1.7'
-  id 'org.graalvm.buildtools.native' version '0.10.2'
+    id 'java'
+    id 'application'
+    id 'org.beryx.jlink' version '2.25.0'
+    id 'org.springframework.boot' version '3.4.5'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.graalvm.buildtools.native' version '0.10.2'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'org.example'
+version = '1.0-SNAPSHOT'
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 ext {
-  junitVersion = '5.10.2'
-}
-
-/*
-java {
-  toolchain {
-    languageVersion = JavaLanguageVersion.of(24)
-  }
-}
-*/
-
-tasks.withType(JavaCompile) {
-  options.encoding = 'UTF-8'
+    junitVersion = '5.10.2'
 }
 
 application {
-  mainClass = 'Trackfit.TestTrackFit'
+    mainClass = 'Trackfit.TestTrackFit'
 }
 
-javafx {
-  version = "24.0.1"
-  modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base', 'javafx.media' ]
+java {
+    sourceCompatibility = JavaVersion.VERSION_23
+    targetCompatibility = JavaVersion.VERSION_23
+}
+
+run {
+    doFirst {
+        jvmArgs = [
+            '--module-path', configurations.runtimeClasspath.asPath,
+            '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.media,javafx.swing,javafx.web'
+        ]
+    }
 }
 
 dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
-  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-  implementation 'com.jfoenix:jfoenix:9.0.10'
+    implementation 'com.jfoenix:jfoenix:9.0.10'
+    implementation('org.springframework.boot:spring-boot-starter') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-actuator'
+    }
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation("org.springframework.boot:spring-boot-starter-web:3.4.5")
+    implementation("org.springframework:spring-web:6.2.6")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.4.5")
+    implementation("org.postgresql:postgresql:42.7.5")
+    implementation("com.gluonhq:maps:2.0.0-ea+6")
+    implementation("org.json:json:20250517")
+    annotationProcessor 'org.jboss.logging:jboss-logging-processor:2.2.1.Final'
 
-  implementation 'org.openjfx:javafx-controls:20'
-  implementation 'org.openjfx:javafx-fxml:20'
-
-  implementation 'org.springframework.boot:spring-boot-starter'
-  testImplementation 'org.springframework.boot:spring-boot-starter-test'
-  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-  implementation("org.springframework.boot:spring-boot-starter-web:3.4.5")
-  implementation("org.springframework:spring-web:6.2.6")
-
-  implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.4.5")
-  implementation("org.postgresql:postgresql:42.7.5")
-
-  // https://mvnrepository.com/artifact/com.gluonhq/maps
-  implementation("com.gluonhq:maps:2.0.0-ea+6")
-
-  // https://mvnrepository.com/artifact/org.json/json
-  implementation("org.json:json:20250517")
-  annotationProcessor 'org.jboss.logging:jboss-logging-processor:2.2.1.Final'
-
+    // JavaFX para Windows (ajusta a linux o mac si es necesario)
+    implementation "org.openjfx:javafx-base:21.0.2:win"
+    implementation "org.openjfx:javafx-controls:21.0.2:win"
+    implementation "org.openjfx:javafx-fxml:21.0.2:win"
+    implementation "org.openjfx:javafx-graphics:21.0.2:win"
+    implementation "org.openjfx:javafx-media:21.0.2:win"
+    implementation "org.openjfx:javafx-swing:21.0.2:win"
+    implementation "org.openjfx:javafx-web:21.0.2:win"
 }
 
 test {
-  useJUnitPlatform()}
+    useJUnitPlatform()
+}
 
 jlink {
-  imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
-  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-  launcher {
-    name = 'app'
-  }
+    imageZip = project.file("${buildDir}/distributions/app.zip")
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'app'
+    }
 }
 
 jlinkZip {
-  group = 'distribution'
+    group = 'distribution'
 }
 
 graalvmNative {
     binaries {
         main {
-            imageName = 'TrackFitApp'
+            imageName = 'TrackFit'
+            buildArgs.add('--no-fallback')
+            buildArgs.add('--enable-http')
+            buildArgs.add('--enable-https')
         }
     }
 }

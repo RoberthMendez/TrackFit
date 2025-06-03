@@ -4,5 +4,21 @@
     "allDeclaredConstructors": true,
     "allPublicMethods": true,
     "allDeclaredMethods": true
+  },
+  {
+    "name": "org.jboss.logging.Logger",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.hibernate.internal.log.ConnectionInfoLogger_$logger",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "[Lorg.hibernate.event.spi.PostUpsertEventListener;",
+    "unsafeAllocated": true
   }
 ]

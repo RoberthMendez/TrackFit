@@ -49,8 +49,6 @@ public class ControladorConsultarRutas extends ControladorMenu {
     @FXML
     private JFXListView<String> idUbicaciones;
 
-    private Ruta ruta;
-
     @FXML
     void initialize() {
 
@@ -100,8 +98,8 @@ public class ControladorConsultarRutas extends ControladorMenu {
         
         public CustomMapLayer(Ruta ruta){
             this.ruta = ruta;
-            int i=0;
-            for(Ubicacion U: ruta.getUbicaciones()){
+            int i = 0;
+            for(Ubicacion _: ruta.getUbicaciones()){
                 markers.add(new Circle(5, Color.RED));
                 getChildren().add(markers.get(i));
                 i++;

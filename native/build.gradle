@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.gluonhq.gluonfx-gradle-plugin' version "1.0.26"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':') // Usa el código del proyecto principal
+}
+
+application {
+    mainClass = 'Trackfit.TestTrackFit'
+}
+
+gluonfx {
+    target = 'host'
+    // Puedes agregar más configuración aquí si lo necesitas
+}

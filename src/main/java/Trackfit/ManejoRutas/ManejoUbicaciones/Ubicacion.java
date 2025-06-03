@@ -50,6 +50,7 @@ public class Ubicacion {
         
     }
 
+    @SuppressWarnings("deprecation")
     public void calcularCoordenadas() throws UbicacionExc{
         try{
             String address=URLEncoder.encode(getDireccion(), "UTF-8").replace("+", "%20").replace("%3A", ":").replace("%2F", "/")+ "+Bogota+Colombia";

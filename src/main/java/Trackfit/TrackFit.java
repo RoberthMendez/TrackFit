@@ -128,7 +128,7 @@ public class TrackFit {
         Ruta ruta = buscarRuta(nomRuta);
         Recorrido recorrido = buscarRecorrido(nomRecorrido);
 
-        if (recorrido == null){
+        if (recorrido == null && ruta != null){
             Recorrido r = new Recorrido(nomRecorrido, ruta, horaInicio, horaFin, calorias, distancia);
             recorridos.add(r);
             guardarRecorridoEnBd(r);

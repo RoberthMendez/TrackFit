@@ -54,7 +54,6 @@ dependencies {
     implementation("org.json:json:20250517")
     annotationProcessor 'org.jboss.logging:jboss-logging-processor:2.2.1.Final'
 
-    // JavaFX para Windows (ajusta a linux o mac si es necesario)
     implementation "org.openjfx:javafx-base:21.0.2:win"
     implementation "org.openjfx:javafx-controls:21.0.2:win"
     implementation "org.openjfx:javafx-fxml:21.0.2:win"
@@ -62,6 +61,7 @@ dependencies {
     implementation "org.openjfx:javafx-media:21.0.2:win"
     implementation "org.openjfx:javafx-swing:21.0.2:win"
     implementation "org.openjfx:javafx-web:21.0.2:win"
+
 }
 
 test {

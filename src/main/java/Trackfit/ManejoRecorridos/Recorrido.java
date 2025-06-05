@@ -17,8 +17,8 @@ public class Recorrido {
     @Column(name = "Nombre")
     private String nombre;
 
-    @OneToOne
-    @JoinColumn(name = "ruta_id", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name = "ruta_id")
     private Ruta ruta;
 
     @Column(name = "HoraInicio")

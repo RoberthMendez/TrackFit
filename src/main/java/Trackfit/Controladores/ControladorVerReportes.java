@@ -75,6 +75,10 @@ public class ControladorVerReportes extends ControladorMenu {
     @FXML
     public void onActionIntervalo(ActionEvent event) {
 
+        idCalorias.setText("");
+        idDistancia.setText("");
+        idRecorridos.getItems().clear();
+
         // Aquí puedes manejar la acción del comboBox si es necesario
         String intervaloSeleccionado = idIntervalo.getValue();
         Reporte reporte = sistema.crearReporteRecorridos(intervaloSeleccionado);
